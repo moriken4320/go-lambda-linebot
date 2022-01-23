@@ -1,4 +1,9 @@
-.PHONY: build
+profile = linebot
+
+.PHONY: build local
 
 build:
-	sam build --profile=linebot
+	sam build --profile=$(profile)
+
+local:
+	sam local start-api --profile=$(profile)
